@@ -92,7 +92,7 @@ def make_github_link(app, path, line=None, mode="blob"):
 
 def add_doc_link(app, pagename, templatename, context, doctree):
     """ Add github_link function linking to the current page on github """
-    if not app.config.github_user and app.config.github_project:
+    if not (app.config.github_user and app.config.github_project):
         return
 
     # FIXME: find other way to recover current document's source suffix
